@@ -1,10 +1,13 @@
 package com.atmecs.hibernate_one_to_many.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,30 +20,30 @@ public class Manager_Details
     @Column(name = "m_id")
     private int m_id;
  
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "p_id")
+	private Project_Details proj_det;
+	
     @Column(name = "m_name")
     private String m_name;
  
     @Column(name = "m_email")
     private String m_email;
  
-    @Column(name = "p_name")
-    private int p_name;
-
-	public int getM_id() {
-		return m_id;
-	}
-	
-	public Manager_Details()
-	{
-		
-	}
-	
+    @Column(name = "p_id")
+    private int p_id;
+    
 	public Manager_Details(String m_name, String m_email)
 	{
 		this.m_name = m_name;
 		this.m_email = m_email;
 	}
 
+	public int getM_id() 
+	{
+		return m_id;
+	}
+	
 	public void setM_id(int m_id) 
 	{
 		this.m_id = m_id;
@@ -66,14 +69,14 @@ public class Manager_Details
 		this.m_email = m_email;
 	}
 
-	public int getP_name() 
+	public int getP_id() 
 	{
-		return p_name;
+		return p_id;
 	}
 
-	public void setP_name(int p_name) 
+	public void setP_name(int p_id) 
 	{
-		this.p_name = p_name;
+		this.p_id = p_id;
 	}
     
     
