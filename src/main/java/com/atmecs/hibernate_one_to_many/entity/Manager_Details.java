@@ -16,15 +16,6 @@ public class Manager_Details
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "m_id")
     private int m_id;
- 
-	/*
-	 * @OneToOne(cascade = CascadeType.ALL)
-	 * 
-	 * @PrimaryKeyJoinColumn
-	 * 
-	 * @JoinColumn(name = "p_id", referencedColumnName = "p_id") private
-	 * Project_Details proj_det;
-	 */
 	
     @Column(name = "m_name")
     private String m_name;
@@ -39,13 +30,6 @@ public class Manager_Details
     {
     	
     }
-    
-	/*
-	 * public void setManagerDetails(Project_Details proj_det2) { this.proj_det =
-	 * proj_det2; }
-	 */
-    
-	
 
 	public int getM_id() 
 	{
@@ -98,7 +82,5 @@ public class Manager_Details
 	{
 		return "Manager_Details [m_id=" + m_id + ", m_name=" + m_name + ", m_email=" + m_email + ", p_id=" + p_id + "]";
 	}
-    
-	
     
 }

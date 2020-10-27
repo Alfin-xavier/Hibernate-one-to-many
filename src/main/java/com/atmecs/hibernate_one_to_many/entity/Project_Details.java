@@ -73,8 +73,4 @@ public class Project_Details
 		this.manager_det = manager_det;
 	}
 
-
-	
-
-	
 }

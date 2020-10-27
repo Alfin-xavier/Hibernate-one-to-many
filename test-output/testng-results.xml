@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-27T16:33:57 IST" name="Default suite" finished-at="2020-10-27T16:34:13 IST" duration-ms="16645">
+  <suite started-at="2020-10-27T16:52:56 IST" name="Default suite" finished-at="2020-10-27T16:53:36 IST" duration-ms="39956">
     <groups>
     </groups>
-    <test started-at="2020-10-27T16:33:57 IST" name="Default test" finished-at="2020-10-27T16:34:13 IST" duration-ms="16645">
+    <test started-at="2020-10-27T16:52:56 IST" name="Default test" finished-at="2020-10-27T16:53:36 IST" duration-ms="39956">
       <class name="com.atmecs.hibernate_one_to_many.crud_op.AddRecord">
-        <test-method signature="addRecord()[pri:0, instance:com.atmecs.hibernate_one_to_many.crud_op.AddRecord@233fe9b6]" started-at="2020-10-27T16:33:57 IST" name="addRecord" finished-at="2020-10-27T16:34:13 IST" duration-ms="16602" status="FAIL">
+        <test-method signature="addRecord()[pri:0, instance:com.atmecs.hibernate_one_to_many.crud_op.AddRecord@43ee72e6]" started-at="2020-10-27T16:52:56 IST" name="addRecord" finished-at="2020-10-27T16:53:36 IST" duration-ms="39908" status="FAIL">
           <exception class="org.hibernate.exception.ConstraintViolationException">
             <message>
               <![CDATA[could not execute statement]]>
@@ -57,7 +57,7 @@ at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachLi
 at org.hibernate.internal.SessionImpl.fireSave(SessionImpl.java:637)
 at org.hibernate.internal.SessionImpl.save(SessionImpl.java:630)
 at org.hibernate.internal.SessionImpl.save(SessionImpl.java:625)
-at com.atmecs.hibernate_one_to_many.crud_op.AddRecord.addRecord(AddRecord.java:46)
+at com.atmecs.hibernate_one_to_many.crud_op.AddRecord.addRecord(AddRecord.java:48)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

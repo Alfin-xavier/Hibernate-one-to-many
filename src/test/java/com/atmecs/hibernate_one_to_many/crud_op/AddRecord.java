@@ -3,7 +3,6 @@ package com.atmecs.hibernate_one_to_many.crud_op;
 import java.util.Scanner;
 
 import org.hibernate.Session;
-import org.hibernate.SessionException;
 import org.hibernate.Transaction;
 import org.testng.annotations.Test;
 
@@ -26,17 +25,20 @@ public class AddRecord {
 
 			for (int i = 1; i <= quantity; i++) {
 				System.out.println("Enter the no.of details :" + i);
-				/*
-				 * System.out.println("Enter the Manager Name :"); String m_name = scan.next();
-				 * System.out.println("Enter the Mail:"); String mail = scan.next();
-				 */
+
+				System.out.println("Enter the Manager Name :");
+				String m_name = scan.next();
+				System.out.println("Enter the Mail:");
+				String mail = scan.next();
+
 				System.out.println("Enter the Project Name :");
 				String p_name = scan.next();
 				System.out.println("Enter Duration: ");
 				String p_duration = scan.next();
 
 				Project_Details proj_det = new Project_Details();
-				//proj_det.setManager_det(new Manager_Details(m_name, mail));
+				
+				proj_det.setManager_det(new Manager_Details(m_name, mail));
 
 				proj_det.setP_name(p_name);
 				proj_det.setP_duration(p_duration);
