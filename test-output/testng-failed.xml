@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.atmecs.hibernate_one_to_many.cascade_op.ManagerConfig">
+      <class name="com.atmecs.hibernate_one_to_many.crud_op.AddRecord">
         <methods>
-          <include name="configuration"/>
+          <include name="addRecord"/>
         </methods>
-      </class> <!-- com.atmecs.hibernate_one_to_many.cascade_op.ManagerConfig -->
+      </class> <!-- com.atmecs.hibernate_one_to_many.crud_op.AddRecord -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

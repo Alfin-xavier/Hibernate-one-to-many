@@ -19,6 +19,8 @@
         <property name="current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
  
         <!-- Mapping With Model Class Containing Annotations -->
+		<!-- <mapping class ="com.atmecs.hibernate_one_to_many.trans_entity.Customer.java " />   
+		<mapping class =" com.atmecs.hibernate_one_to_many.trans_entity.Transaction.java" />      -->
        <!--  <mapping class="com.jcg.hibernate.maven.User" /> -->
     </session-factory>
 </hibernate-configuration>

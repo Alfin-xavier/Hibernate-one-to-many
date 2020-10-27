@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -15,14 +16,11 @@ public class Project_Details
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private int id;
-	
-    @Column(name = "p_id")
+	@Column(name = "p_id")
     private int p_id;
 	
-	@OneToOne(mappedBy = "proj_det", cascade = {CascadeType.DETACH, CascadeType.MERGE, 
-											CascadeType.REFRESH, CascadeType.PERSIST})
+	@JoinColumn(name ="p_id")
+	@OneToOne(cascade = CascadeType.ALL)
 	private Manager_Details manager_det;
  
     @Column(name = "p_name")
@@ -31,24 +29,11 @@ public class Project_Details
     @Column(name = "p_duration")
     private String p_duration;
     
-	public Project_Details(int p_id,String p_name, String p_duration) 
+	public Project_Details()
 	{
-		this.p_id = p_id;
-		this.p_name = p_name;
-		this.p_duration = p_duration;
-				
+		
 	}
 	
-	public int getId() 
-	{
-		return id;
-	}
-	
-	public void setId(int id) 
-	{
-		this.id = id;
-	}
-
 	public int getP_id() 
 	{
 		return p_id;
@@ -78,5 +63,18 @@ public class Project_Details
 	{
 		this.p_duration = p_duration;
 	}
+
+	public Manager_Details getManager_det() {
+		return manager_det;
+	}
+
+	public void setManager_det(Manager_Details manager_det) 
+	{
+		this.manager_det = manager_det;
+	}
+
+
+	
+
 	
 }

@@ -1,14 +1,10 @@
 package com.atmecs.hibernate_one_to_many.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -18,16 +14,17 @@ public class Manager_Details
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-	
     @Column(name = "m_id")
     private int m_id;
  
-	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	@JoinColumn(name = "p_id", referencedColumnName = "p_id")
-	private Project_Details proj_det;
+	/*
+	 * @OneToOne(cascade = CascadeType.ALL)
+	 * 
+	 * @PrimaryKeyJoinColumn
+	 * 
+	 * @JoinColumn(name = "p_id", referencedColumnName = "p_id") private
+	 * Project_Details proj_det;
+	 */
 	
     @Column(name = "m_name")
     private String m_name;
@@ -38,34 +35,29 @@ public class Manager_Details
     @Column(name = "p_id")
     private int p_id;
     
-    public void setManagerDetails(Project_Details proj_det2)
+    public Manager_Details()
     {
     	
     }
     
-	public Manager_Details(int m_id,String m_name, String m_email,int p_id)
-	{
-		this.m_id = m_id;
-		this.m_name = m_name;
-		this.m_email = m_email;
-		this.p_id = p_id;
-	}
+	/*
+	 * public void setManagerDetails(Project_Details proj_det2) { this.proj_det =
+	 * proj_det2; }
+	 */
+    
 	
-	public int getId() 
-	{
-		return id;
-	}
-	
-	public void setId(int id) 
-	{
-		this.id = id;
-	}
 
 	public int getM_id() 
 	{
 		return m_id;
 	}
 	
+	public Manager_Details(String m_name, String m_email) 
+	{
+		this.m_name = m_name;
+		this.m_email = m_email;
+	}
+
 	public void setM_id(int m_id) 
 	{
 		this.m_id = m_id;
@@ -100,6 +92,13 @@ public class Manager_Details
 	{
 		this.p_id = p_id;
 	}
+
+	@Override
+	public String toString() 
+	{
+		return "Manager_Details [m_id=" + m_id + ", m_name=" + m_name + ", m_email=" + m_email + ", p_id=" + p_id + "]";
+	}
     
+	
     
 }
