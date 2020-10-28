@@ -1,10 +1,13 @@
-package com.atmecs.hibernate_one_to_many.entity;
+package com.atmecs.hibernate_one_to_one.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,23 +26,13 @@ public class Manager_Details
     @Column(name = "m_email")
     private String m_email;
  
-    @Column(name = "p_id")
-    private int p_id;
-    
-    public Manager_Details()
-    {
-    	
-    }
+    @JoinColumn(name ="p_id")
+   	@OneToOne(cascade = CascadeType.ALL)
+    private Project_Details proj_det;
 
 	public int getM_id() 
 	{
 		return m_id;
-	}
-	
-	public Manager_Details(String m_name, String m_email) 
-	{
-		this.m_name = m_name;
-		this.m_email = m_email;
 	}
 
 	public void setM_id(int m_id) 
@@ -57,7 +50,7 @@ public class Manager_Details
 		this.m_name = m_name;
 	}
 
-	public String getM_email()
+	public String getM_email() 
 	{
 		return m_email;
 	}
@@ -67,20 +60,26 @@ public class Manager_Details
 		this.m_email = m_email;
 	}
 
-	public int getP_id() 
+	public Project_Details getProj_det() 
 	{
-		return p_id;
+		return proj_det;
 	}
 
-	public void setP_name(int p_id) 
+	public void setProj_det(Project_Details proj_det) 
 	{
-		this.p_id = p_id;
+		this.proj_det = proj_det;
 	}
 
-	@Override
-	public String toString() 
+	public Manager_Details(String m_name, String m_email) 
 	{
-		return "Manager_Details [m_id=" + m_id + ", m_name=" + m_name + ", m_email=" + m_email + ", p_id=" + p_id + "]";
+		this.m_name = m_name;
+		this.m_email = m_email;
 	}
-    
+
+	public Manager_Details() 
+	{
+
+	}
+
+  
 }

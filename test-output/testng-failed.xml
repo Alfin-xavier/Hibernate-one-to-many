@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.atmecs.hibernate_one_to_many.crud_op.AddRecord">
+      <class name="com.atmecs.hibernate_one_to_one.crud_operations.UpdateRecord">
         <methods>
-          <include name="addRecord"/>
+          <include name="updateRecord"/>
         </methods>
-      </class> <!-- com.atmecs.hibernate_one_to_many.crud_op.AddRecord -->
+      </class> <!-- com.atmecs.hibernate_one_to_one.crud_operations.UpdateRecord -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

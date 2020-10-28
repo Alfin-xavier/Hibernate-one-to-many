@@ -1,18 +1,17 @@
-package com.atmecs.hibernate_one_to_many.crud_op;
+package com.atmecs.hibernate_one_to_one.crud_operations;
 
 import java.util.Scanner;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.testng.annotations.Test;
-
-import com.atmecs.hibernate_one_to_many.entity.Manager_Details;
-import com.atmecs.hibernate_one_to_many.entity.Project_Details;
-import com.atmecs.hibernate_one_to_many.utility.HibernateUtility;
+import com.atmecs.hibernate_one_to_one.entity.Manager_Details;
+import com.atmecs.hibernate_one_to_one.entity.Project_Details;
+import com.atmecs.hibernate_one_to_one.utility.HibernateUtility;
 
 public class AddRecord {
-	@Test
-	public void addRecord() {
+
+	public void addRecord() 
+	{
 
 		Scanner scan = new Scanner(System.in);
 		final Session session = HibernateUtility.getHibernateSession();
@@ -23,29 +22,27 @@ public class AddRecord {
 
 			int quantity = scan.nextInt();
 
-			for (int i = 1; i <= quantity; i++) {
-				System.out.println("Enter the no.of details :" + i);
+			for (int i = 1; i <= quantity; i++) 
+			{
+				System.out.println("Enter the no.of details :" + i+"\n");
 
 				System.out.println("Enter the Manager Name :");
 				String m_name = scan.next();
 				System.out.println("Enter the Mail:");
-				String mail = scan.next();
+				String m_email = scan.next();
 
 				System.out.println("Enter the Project Name :");
 				String p_name = scan.next();
 				System.out.println("Enter Duration: ");
 				String p_duration = scan.next();
 
-				Project_Details proj_det = new Project_Details();
+				Manager_Details manager_det = new Manager_Details();
 				
-				proj_det.setManager_det(new Manager_Details(m_name, mail));
-
-				proj_det.setP_name(p_name);
-				proj_det.setP_duration(p_duration);
-
-				proj_det.setManager_det(new Manager_Details(p_name, p_duration));
-
-				session.save(proj_det);
+				manager_det.setM_name(m_name);
+				manager_det.setM_email(m_email);
+				manager_det.setProj_det(new Project_Details(p_name,p_duration));
+				
+				session.save(manager_det);
 
 			}
 			transaction.commit();
