@@ -14,6 +14,7 @@ public class AddRecord {
 	{
 
 		Scanner scan = new Scanner(System.in);
+		
 		final Session session = HibernateUtility.getHibernateSession();
 		try {
 			Transaction transaction = session.beginTransaction();
